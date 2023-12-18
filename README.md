@@ -1,45 +1,44 @@
-# cli-rpg-java
-Simple text-based RPG (Role-Playing Game) in Java involving various components such as character creation, battles, inventory, and more. 
+# cli-rpg-java-japanese
+シンプルなテキストベースのRPG (ロールプレイングゲーム) Java版
+このゲームはキャラクター作成、戦闘、インベントリなど、さまざまなコンポーネントを含むJavaで作られたテキストベースのRPGです。
 
-## System requirements
-You need to have Java installed on your system to run this game. The game has been tested with OpenJDK version 8 (Java 1.8.0) and later.
+## システム要件
+このゲームを実行するには、システムにJavaがインストールされている必要があります。このゲームはOpenJDKバージョン8（Java 1.8.0）以降でテストされています。
 
-## How to run
-For the simplicity sake we did not use any build tools like Maven or Gradle it is required to follow this steps:
-1. **Compile the Game**:
+## 実行方法
+簡単にするために、MavenやGradleのようなビルドツールは使用していません。以下の手順に従ってください：
+1. **ゲームのコンパイル**:
 
-    - To compile the game, make sure you have Java installed on your system.
-    - Open your terminal or command prompt and navigate to the directory where the game source files are located.
-    - Compile the game by running the following command:
+    - ゲームをコンパイルするには、システムにJavaがインストールされていることを確認してください。
+    - ターミナルまたはコマンドプロンプトを開き、ゲームのソースファイルがあるディレクトリに移動します。
+    - 次のコマンドを実行してゲームをコンパイルします：
+
 
 ```bash
 javac Main.java src/com/clirpg/game/Game.java
 ```
 
-2. **Run the Game**:
+2. **ゲームの実行**:
 
-    - After compilation, you can run the game with the following command:
+    - コンパイル後、次のコマンドでゲームを実行できます：
 
 ```bash
 java Main
 ```
 
 
-3. **Playing the Game**:
+3. **ゲームのプレイ方法**:
 
-    - Follow the on-screen instructions to navigate through the game menus, create a character, and explore the game world.
+    - 画面上の指示に従ってゲームメニューをナビゲートし、キャラクターを作成し、ゲームの世界を探索します。
 
-## Gameplay instructions
-- Use the number keys to select menu options.
-- Follow the prompts on the screen to create a character and make choices during the game.
+## ゲームプレイの指示
+- メニューオプションを選択するには、数字キーを使用します。
+- 画面上のプロンプトに従ってキャラクターを作成し、ゲーム中に選択を行います。
 
 
-## Credits
-Developed by:
+## クレジット
+Clone元開発者:
 
 1. Simon Hötzel
 2. Brian O'Sullivan
 3. Mateusz Winnicki
-
-Enjoy playing our game!
-# cli-rpg-java-japanese
