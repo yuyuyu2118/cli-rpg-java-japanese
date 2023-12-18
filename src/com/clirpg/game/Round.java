@@ -278,37 +278,6 @@ public class Round {
   }
 
   public int checkAndUpdate() {
-    if (currentSoldierNumber > 0) {
-      for (int i = 0; i < currentSoldierNumber; i++) {
-        if (roundSoldierArray[i] != null) {
-          if (roundSoldierArray[i].health <= 0) {
-            System.out.println(
-              ConsoleColors.RED_BACKGROUND +
-              roundSoldierArray[i].name +
-              "が死亡しました" +
-              ConsoleColors.RESET
-            );
-            removeSoldier(i);
-          }
-        } else {
-          System.out.println("兵士が失われました。エラー位置：" + i);
-          return 1;
-        }
-      }
-    }
-
-package src.com.clirpg.game;
-
-import java.util.Random;
-import java.util.Scanner;
-import src.com.clirpg.characters.*;
-import src.com.utils.ConsoleColors;
-
-public class Round {
-
-  // ... (他のコード部分は省略)
-
-  public int checkAndUpdate() {
     if (currentMonsterNumber > 0) {
       for (int i = 0; i < currentMonsterNumber; i++) {
         if (roundMonsterArray[i] != null) {
@@ -333,7 +302,37 @@ public class Round {
     return 1;
   }
 
-  // ... (他のメソッドは省略)
+  public void removeSoldier(int toRemove) {
+    Soldier[] tmpRoundSoldierArray = roundSoldierArray;
+    int tmpSoldierNumber = currentSoldierNumber;
+    // 削除対象の兵士を表示する（コメントアウトされている）
+    //System.out.println("削除対象の兵士 " + tmpRoundSoldierArray[toRemove]);
+    this.roundSoldierArray = new Soldier[1000];
+    this.currentSoldierNumber = 0;
+    for (int i = 0; i < tmpSoldierNumber; i++) {
+      // 追加する兵士を表示する（コメントアウトされている）
+      //System.out.println("追加中: " + tmpRoundSoldierArray[i]);
+      if (i != toRemove) {
+        appendSoldier(tmpRoundSoldierArray[i]);
+      }
+    }
+  }
+
+  public void removeMonster(int toRemove) {
+    Monster[] tmpRoundMonsterArray = roundMonsterArray;
+    int tmpMonsterNumber = currentMonsterNumber;
+    // 削除対象のモンスターを表示する（コメントアウトされている）
+    //System.out.println("削除対象のモンスター " + tmpRoundMonsterArray[toRemove]);
+    this.roundMonsterArray = new Monster[1000];
+    this.currentMonsterNumber = 0;
+    for (int i = 0; i < tmpMonsterNumber; i++) {
+      // 追加するモンスターを表示する（コメントアウトされている）
+      //System.out.println("追加中: " + tmpRoundMonsterArray[i]);
+      if (i != toRemove) {
+        appendMonster(tmpRoundMonsterArray[i]);
+      }
+    }
+  }
 
   public void appendMonster(Monster newMonster) {
     if (currentMonsterNumber < roundMonsterArray.length) {
@@ -341,7 +340,9 @@ public class Round {
       currentMonsterNumber++; // Increment the count of Monsters in the array
     } else {
       // Handle the case where the array is full and cannot append more Monsters
-      System.out.println("配列がいっぱいです。これ以上モンスターを追加できません。");
+      System.out.println(
+        "配列がいっぱいです。これ以上モンスターを追加できません。"
+      );
     }
   }
 
